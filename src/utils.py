@@ -8,13 +8,13 @@ class OurModel(nn.Module):
         super(OurModel, self).__init__()
         # Layers
         self.net = nn.Sequential(
-            nn.Linear(21, 21),
+            nn.Linear(20, 20),
             nn.ReLU(),
-            nn.Linear(21, 21),
+            nn.Linear(20, 20),
             nn.Tanh(),
-            nn.Linear(21, 21),
+            nn.Linear(20, 20),
             nn.ReLU(),
-            nn.Linear(21, 1),
+            nn.Linear(20, 1),
         )
 
     def add_configuration(self, network):
