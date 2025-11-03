@@ -7,5 +7,11 @@ class BinaryClassifier(nn.Module):
         super(BinaryClassifier, self).__init__()
         self.net = nn.Sequential()
 
+    def add_net(self, network):
+        self.net = network
+
+    def add_module(self, name, nnModule):
+        self.net.add_module(name, nnModule)
+
     def forward(self, x):
         return self.net(x)
