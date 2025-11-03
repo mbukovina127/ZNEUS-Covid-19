@@ -22,3 +22,8 @@ Dataset: https://www.kaggle.com/datasets/meirnizri/covid19-dataset
 - [ ] Markdown documentation and comments
 - [ ] Final presentation of projects
 - [ ] Effort on consultations 
+
+
+### TODO ###
+- [ ] Drop uncorrelated values
+- 
