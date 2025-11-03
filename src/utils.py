@@ -14,7 +14,7 @@ class OurModel(nn.Module):
             nn.Tanh(),
             nn.Linear(21, 21),
             nn.ReLU(),
-            nn.Linear(21, 2),
+            nn.Linear(21, 1),
         )
 
     def add_configuration(self, network):
@@ -25,4 +25,3 @@ class OurModel(nn.Module):
 
     def forward(self, x):
         return self.net(x)
-    def
