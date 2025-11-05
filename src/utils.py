@@ -7,13 +7,14 @@ class OurModel(nn.Module):
         # Layers
 
 
-    def sweeping_build(self, input_size, output_size, hidden_size: list, n_layers, dropout): # TODO: add dropout
+    def sweeping_build(self, input_size, output_size, hidden_size: list, activation_f, n_layers, dropout): # TODO: add dropout
         layers = []
         in_size = input_size
-        for i in range(n_layers): # adjusted for input layer
+        for i in range(0, n_layers): # adjusted for input layer
             out_size = hidden_size[i]
             layers.append(nn.Linear(in_size, out_size))
-            layers.append(nn.ReLU()) # TODO: we could use different activation functions
+            if activation_f == 'relu': layers.append(nn.ReLU())
+            if activation_f == 'tanh': layers.append(nn.Tanh())
             in_size = out_size
 
         layers.append(nn.Linear(in_size, output_size))
