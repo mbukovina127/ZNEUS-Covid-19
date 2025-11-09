@@ -60,6 +60,13 @@ After cleaning and transformation, we obtained a dataset of approximately **193,
 
 ## Model Development
 
+## Data Splitting
+
+Our cleaned dataset was large so we could afford to have a substantial validation and test set without sacrificing training data.
+- **Training set**: 90%
+- **Test set**: 10% 
+  - 50% validation + 50% final test
+
 ### Model Architecture
 A fully connected feed-forward neural network was implemented in **PyTorch** for binary classification.  
 We developed a reusable function for dynamically constructing neural networks with varying numbers of layers and hidden units, allowing for flexible **hyperparameter sweeping**.
@@ -159,7 +166,8 @@ _metrics of correlation_
 - The best activation function proved to be **tanh**
 - The **number of layers** had little to no correlation with performance.  
 - **Batch size** had a **positive correlation** with model accuracy.  
-- **Dropout** negatively affected generalization.  
+- **Dropout** negatively affected generalization. 
+- **Learning rate** needed to be small due to the large dataset size.
 
 Final validation accuracy achieved: **~0.64**
 
@@ -168,7 +176,7 @@ The reduced representational capacity limited feature propagation, leading to we
 
 
 ## Conclusions
-The final model achieved an accuracy of approximately **64%**, which, given the complexity and potential noise in the dataset, is a reasonable baseline.
+The final model achieved an accuracy of approximately **64%**, which, given the complexity and potential noise in the dataset, is a reasonable baseline. These defects were probably due to poor base of dataset and not accurate features.             
 Despite the limitations, the project successfully demonstrated the full workflow ->from **data exploration** and **preprocessing** to **model design**, **training**, and **evaluation** -> while applying modern machine learning and experiment tracking tools.
 
 ---
