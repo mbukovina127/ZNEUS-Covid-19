@@ -4,7 +4,7 @@
 The goal of this project was to analyze the **COVID-19 dataset** available on Kaggle ([link](https://www.kaggle.com/datasets/meirnizri/covid19-dataset)), which contains information about patients and their symptoms.  
 Based on these data, we aimed to create a **binary classification model** capable of predicting whether a given patient belongs to the **high-risk** or **low-risk** group.
 
-The dataset was preprocessed for machine learning tasks, and a neural network was designed to perform binary classification. Through this project, we aimed to understand the entire pipeline — from raw data to a functioning predictive model — and to experiment with performance-improving techniques such as **dropout**, **batch normalization**, **skip connections**, and **bottleneck layers**.
+The dataset was preprocessed for machine learning tasks, and a neural network was designed to perform binary classification. Through this project, we aimed to understand the entire pipeline -> from raw data to a functioning predictive model -> to experiment with performance-improving techniques such as **dropout**, **batch normalization**, **skip connections**, and **bottleneck layers**.
 
 This project builds upon the theoretical background provided by the course **ZNEUS (Fundamentals of Neural Networks and Artificial Systems)** and utilizes the following tools:
 - **Python**
@@ -22,6 +22,8 @@ The original dataset contained **over one million records** and **21 attributes*
 Most features were **binary**, representing symptoms, chronic diseases (such as asthma, hypertension, or obesity), or lifestyle factors (such as smoking or pregnancy).  
 Basic demographic information included **age** and **gender**.
 
+![Correlation_original](img/corr_1.png)
+
 ### Data Cleaning and Preparation
 We began by detecting abnormal and outlier values using **boxplots**.  
 Because most attributes were binary, **Gaussian normalization** was unnecessary.  
@@ -31,9 +33,13 @@ The dataset was relatively **balanced** between risk classes, and **feature corr
 We applied the **Interquartile Range (IQR)** method to remove outliers, keeping the lower limit (age = 0) to include newborns.
 
 Some missing or invalid values were encoded as **97**, **98**, or **99**, with 97 indicating “not applicable” (for instance, pregnancy in male patients). These were replaced with **0** to make the data consistent.  
-Logical inconsistencies were also fixed — for example, if a patient received home care (`MEDICAL_UNIT = 1`), attributes like **ICU** or **Intubed** could not be active.
+Logical inconsistencies were also fixed for example, if a patient received home care (`MEDICAL_UNIT = 1`), attributes like **ICU** or **Intubed** could not be active.
 
-Wherever necessary, we **recoded binary variables** so that all used `1` for “yes/true” and `0` for “no/false” for better interpretability.
+![Dataset_attributes](img/data_distribution.png)
+
+Wherever necessary, we **recoded binary variables** so that all used `1` for “yes/true” and `0` for “no/false” for better interpretability. After this the correlation matrix looked much more different and lost a track of previous correlations. We tried to examine if it had any impact on final model, but it did not.
+
+![Correlation_cleaned](img/corr_2.png)
 
 ### Target Variable Definition
 The original attribute **CLASSIFICATION_FINAL** indicated patient risk categories from 0 to 9.  
