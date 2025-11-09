@@ -104,7 +104,7 @@ class OurModel(nn.Module):
 ## Experiments and Observations
 
 ### Hyperparameter Sweep
-To identify optimal hyperparameters, we used **Weights & Biases (wandb)** and performed a **hyperparameter sweep** — a systematic process of testing multiple combinations of learning rates, layer sizes, dropout rates, and optimizers.
+To identify optimal hyperparameters, we used **Weights & Biases (wandb)** and performed a **hyperparameter sweep** = a systematic process of testing multiple combinations of learning rates, layer sizes, dropout rates, and optimizers.
 
 We explored parameters such as:
 - **Learning rate**
@@ -169,6 +169,6 @@ The reduced representational capacity limited feature propagation, leading to we
 
 ## Conclusions
 The final model achieved an accuracy of approximately **64%**, which, given the complexity and potential noise in the dataset, is a reasonable baseline.
-Despite the limitations, the project successfully demonstrated the full workflow — from **data exploration** and **preprocessing** to **model design**, **training**, and **evaluation** — while applying modern machine learning and experiment tracking tools.
+Despite the limitations, the project successfully demonstrated the full workflow ->from **data exploration** and **preprocessing** to **model design**, **training**, and **evaluation** -> while applying modern machine learning and experiment tracking tools.
 
 ---
