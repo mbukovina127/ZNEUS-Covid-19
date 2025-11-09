@@ -134,7 +134,8 @@ sweep_config = {
 ```
 ![Grid_sweep](img/grid_sweep.png)
 ![Random_sweep](img/random_sweep.png)
-_grid and random sweeps show the accuracy plateau of 64%_
+![img.png](img/natural_select.png)
+_grid and random sweeps show the accuracy plateau of 64% after selecting the most fit candidates from previous sweeps. 
 
 
 ![](img/random_sweep_droput.png)
@@ -148,10 +149,11 @@ _metrics of correlation_
 - **Few epochs** were sufficient for convergence; training longer did not significantly improve results.  
 - The **first hidden layer** should be **larger than the input vector**, which improved feature representation.  
 - The **SGD optimizer** showed **negative correlation** with validation performance.  
+- **Adam optimizer consistently outperformed all others**, leading to the best results.
+- The best activation function proved to be **tanh**
 - The **number of layers** had little to no correlation with performance.  
 - **Batch size** had a **positive correlation** with model accuracy.  
-- **Dropout** slightly improved generalization (positive correlation).  
-- **Adam optimizer consistently outperformed all others**, leading to the best results.  
+- **Dropout** negatively affected generalization.  
 
 Final validation accuracy achieved: **~0.64**
 
